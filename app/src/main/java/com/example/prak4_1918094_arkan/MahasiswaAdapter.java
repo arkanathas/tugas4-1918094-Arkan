@@ -3,6 +3,7 @@ package com.example.prak4_1918094_arkan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
         holder.txtNama.setText(dataList.get(position).getNama());
         holder.txtNim.setText(dataList.get(position).getNim());
         holder.txtAngkatan.setText(dataList.get(position).getAngkatan());
+        holder.img_icon.setImageResource(dataList.get(position).getGambar());
     }
 
     @Override
@@ -40,15 +42,13 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
 
     public class MahasiswaViewHolder extends RecyclerView.ViewHolder{
         private TextView txtNama, txtNim, txtAngkatan;
-
+        private ImageView img_icon;
         public MahasiswaViewHolder(View itemView) {
             super(itemView);
-            txtNama = (TextView)
-                    itemView.findViewById(R.id.txt_nama);
-            txtNim = (TextView)
-                    itemView.findViewById(R.id.txt_nim);
-            txtAngkatan = (TextView)
-                    itemView.findViewById(R.id.txt_angkatan);
+            txtNama = (TextView) itemView.findViewById(R.id.txt_nama);
+            txtNim = (TextView) itemView.findViewById(R.id.txt_nim);
+            txtAngkatan = (TextView) itemView.findViewById(R.id.txt_angkatan);
+            img_icon = (ImageView) itemView.findViewById(R.id.img_icon);
         }
     }
 }
